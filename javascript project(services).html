@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LegalEase – Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #e8ecf3, #f4f6f9);
+    }
+
+    nav {
+      background-color: #2c3e50;
+      padding: 1rem 2rem;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      color: #f1c40f;
+      text-decoration: underline;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+      background: linear-gradient(to right, #2c3e50, #34495e);
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #dcdcdc;
+      margin-bottom: 25px;
+    }
+
+    .hero .btn {
+      font-weight: 600;
+    }
+
+    .card-section {
+      background: #fff;
+      padding: 60px 20px;
+    }
+
+    .feature-card {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    #services h2 {
+      font-weight: 700;
+      color: #2c3e50;
+    }
+
+    .search-box {
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    .table thead {
+      background-color: #2c3e50;
+      color: #fff;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+      background-color: #f2f6fb;
+    }
+
+    .table-striped tbody tr:hover {
+      background-color: #e9f0f8;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 25px 10px;
+      margin-top: 60px;
+      font-size: 0.95rem;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1><i class="fas fa-scale-balanced me-2"></i>Welcome to LegalEase</h1>
+    <p>Your simple, smart contract and policy generator for freelancers and startups.</p>
+    <a href="javascript project(services).html" class="btn btn-warning">Explore Services</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="javascript project(home).html">Home</a>
+      <a href="javascript project(about).html">About</a>
+      <a href="javascript project(faq).html">FAQ</a>
+	  <a href="javascript project(template).html">Templates</a>
+      <a href="javascript project(contact).html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Highlight Cards -->
+  <div class="container card-section text-center">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card feature-card p-4">
+          <i class="fas fa-file-contract fa-2x text-primary mb-3"></i>
+          <h5>Custom Contracts</h5>
+          <p>Create NDAs, employment contracts and more with ease.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card p-4">
+          <i class="fas fa-shield-alt fa-2x text-success mb-3"></i>
+          <h5>Privacy Tools</h5>
+          <p>Generate GDPR-compliant privacy policies for your site.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card feature-card p-4">
+          <i class="fas fa-user-tie fa-2x text-danger mb-3"></i>
+          <h5>Freelancer Support</h5>
+          <p>Protect your freelance business with secure agreements.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <div class="container my-5" id="services">
+    <h2 class="text-center mb-4">Our Services</h2>
+
+    <!-- Search Box -->
+    <div class="search-box text-center">
+      <input type="text" id="serviceSearch" class="form-control" placeholder="Search service...">
+    </div>
+
+    <!-- Services Table -->
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover table-striped" id="servicesTable">
+        <thead>
+          <tr>
+            <th>Service Name</th>
+            <th>Purpose</th>
+            <th>Required Documents</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Freelancer Agreement</td>
+            <td>Secure contracts between freelancers and clients</td>
+            <td>ID proof, Project scope, Payment terms</td>
+            <td><a href="javascript project(freelancer).html" class="btn btn-sm btn-primary">Register</a></td>
+          </tr>
+          <tr>
+            <td>Startup NDA</td>
+            <td>Protect confidential startup ideas</td>
+            <td>Company details, NDA terms, Signatory info</td>
+            <td><a href="javascript project(nda form).html" class="btn btn-sm btn-primary">Submit NDA</a></td>
+          </tr>
+          <tr>
+            <td>Employment Contract</td>
+            <td>Legal hiring document for startups</td>
+            <td>Employee details, Salary terms, Role description</td>
+            <td><a href="javascript project(employer).html" class="btn btn-sm btn-primary">Create Contract</a></td>
+          </tr>
+          <tr>
+            <td>Privacy Policy Generator</td>
+            <td>Build website/app privacy policies</td>
+            <td>Website URL, Data practices, Contact info</td>
+            <td><a href="javascript project(privacy).html" class="btn btn-sm btn-primary">Generate</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 LegalEase. All rights reserved.</p>
+    <p>Built for startups, freelancers, and innovators seeking legal simplicity.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Filter services table
+    document.getElementById('serviceSearch').addEventListener('keyup', function () {
+      const searchValue = this.value.toLowerCase();
+      const rows = document.querySelectorAll('#servicesTable tbody tr');
+      rows.forEach(row => {
+        const rowText = row.textContent.toLowerCase();
+        row.style.display = rowText.includes(searchValue) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>

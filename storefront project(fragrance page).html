@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Commerce Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+        }
+        .store-header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            color: #00ffe0;
+            text-align: center;
+        }
+        .store-header p {
+            font-style: italic;
+            color: #ccc;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        .card, .accordion-button {
+            border-radius: 1rem;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(255,255,255,0.1);
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #f8f9fa;
+        }
+        .accordion-body {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="store-header py-4">
+        <h1>Fragrance</h1>
+        <p>“Unveil Your Essence!”</p>
+    </div>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Shop Categories</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="storefront project(skincare page).html">Skincare</a></li>
+							<li><a class="dropdown-item" href="storefront project(fragrance page).html">Fragrance</a></li>
+                            <li><a class="dropdown-item" href="storefront project(bath page).html">Bath and Body</a></li>
+                            <li><a class="dropdown-item" href="storefront project(hair care).html">Hair Care</a></li>
+                            <li><a class="dropdown-item" href="storefront project(makeup page).html">Makeup</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="storefront project(brand page).html">Brand</a></li>
+                    <li class="nav-item"><a class="nav-link" href="storefront project(blog page).html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="storefront project(order page).html">Order</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-heart"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PRODUCTS AND FAQ IN ROW -->
+    <div class="container my-5">
+        <div class="row g-4">
+            <!-- Product 1 -->
+            <div class="col-md-4">
+                <div class="card text-dark">
+                    <img src="https://media6.ppl-media.com/tr:h-235,w-235,c-at_max,l-image,i-Best_seller_700x700base_gUMVzNGWt_.png,lfo-top_right,l-end,dpr-2/static/img/product/323568/carmesi-natural-deodorant-roll-on-floral-sunset-2_1_display_1683293544_64a045b1.jpg" class="card-img-top" alt="Good Vibes">
+					<a href="storefront project(order page).html"></a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Carmesi Deodorant and Roll on for Women</h4>
+                        <p class="card-text">Your Aura, Your Strength</p>
+                    </div>
+                </div>
+                <div class="accordion mt-3" id="faq1">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1a">
+                                How to use it?
+                            </button>
+                        </h2>
+                        <div id="collapse1a" class="accordion-collapse collapse show" data-bs-parent="#faq1">
+                            <div class="accordion-body">Take a shower<br>
+							Properly dry underarms with a towel<br>
+							Apply the deo roll-on and wait for it to dry.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1b">
+                                What's special in this?
+                            </button>
+                        </h2>
+                        <div id="collapse1b" class="accordion-collapse collapse" data-bs-parent="#faq1">
+                            <div class="accordion-body">Non sticky<br>
+							Super light texture<br>
+							Does not stain on clothes.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1c">
+                                Benefits
+                            </button>
+                        </h2>
+                        <div id="collapse1c" class="accordion-collapse collapse" data-bs-parent="#faq1">
+                            <div class="accordion-body">Reduces sun damage<br>
+							Reduces odour<br> 
+							Travel friendly<br>
+							Long lasting.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col-md-4">
+                <div class="card text-dark">
+                    <img src="https://media6.ppl-media.com/tr:h-235,w-235,c-at_max,l-image,i-Best_seller_700x700base_gUMVzNGWt_.png,lfo-top_right,l-end,dpr-2/static/img/product/346985/bella-vita-organic-unisex-luxury-perfume-gift-set-4x20-ml-skai-fresh-whiteoud-patchouli-for-men-and-women-pack-of-4-10_1_display_1707981655_30823977.jpg" class="card-img-top" alt="Calamine Wipes">
+					<a href="storefront project(order page).html"></a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Bella Vita Fragrance kit</h4>
+                        <p class="card-text">Where Every Scent Tells Your Story</p>
+                    </div>
+                </div>
+                <div class="accordion mt-3" id="faq2">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2a">
+                                Highlights
+                            </button>
+                        </h2>
+                        <div id="collapse2a" class="accordion-collapse collapse show" data-bs-parent="#faq2">
+                            <div class="accordion-body">
+							Mini girl power perfume combo</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2b">
+                                Ideal for
+                            </button>
+                        </h2>
+                        <div id="collapse2b" class="accordion-collapse collapse" data-bs-parent="#faq2">
+                            <div class="accordion-body">Tired<br>
+							dull</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2c">
+                                Benefits
+                            </button>
+                        </h2>
+                        <div id="collapse2c" class="accordion-collapse collapse" data-bs-parent="#faq2">
+                            <div class="accordion-body">Pleasant fragrance<br>
+							Long lasting<br>
+							Controls body odour<br>
+							Good for daily use.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-md-4">
+                <div class="card text-dark">
+                    <img src="https://media6.ppl-media.com/tr:h-250,w-250,c-at_max,dpr-2/static/img/product/366606/sanfe-clear-and-confident-glycolic-acid-body-lotion-daily-aha-lotion-smooths-rough-and-bumpy-skin-with-niacinamide-lactic-and-glycolic-acid-smooth-skin-from-1st-use-200ml_1_display_1719126614_dc06d543.jpg" class="card-img-top" alt="Dermdoc Sunscreen">
+					<a href="storefront project(order page).html"></a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Sanfe Body Lotion and Moisturizer</h4>
+                        <p class="card-text">Hydration That Loves Your Skin!</p>
+                    </div>
+                </div>
+                <div class="accordion mt-3" id="faq3">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3a">
+                                Key Benefits
+                            </button>
+                        </h2>
+                        <div id="collapse3a" class="accordion-collapse collapse show" data-bs-parent="#faq3">
+                            <div class="accordion-body">Body Acne<br>
+							TAN<br>
+							Bumps<br>
+							Dark spots.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3b">
+                                Ideal for
+                            </button>
+                        </h2>
+                        <div id="collapse3b" class="accordion-collapse collapse" data-bs-parent="#faq3">
+                            <div class="accordion-body">Sun tan<br>
+							all skin types.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3c">
+                                What makes it unique?
+                            </button>
+                        </h2>
+                        <div id="collapse3c" class="accordion-collapse collapse" data-bs-parent="#faq3">
+                            <div class="accordion-body">Glycolic Acid<br>
+							Curd derived Lactic Acid<br>
+							Niacinamide<br>
+							Hyaluronic Acid</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-light text-center py-4 mt-5">
+        <div class="container">
+            <h5>Contact Us</h5>
+            <p>Email: support@etherealtouch.com</p>
+            <p>Address: 123 Dream Avenue, Beauty City, BC 45678</p>
+            <p>Phone: +1 (800) 123-4567</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

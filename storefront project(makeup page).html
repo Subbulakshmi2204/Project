@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Commerce Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+        }
+        .store-header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            color: #00ffe0;
+            text-align: center;
+        }
+        .store-header p {
+            font-style: italic;
+            color: #ccc;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        .card, .accordion-button {
+            border-radius: 1rem;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(255,255,255,0.1);
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: #f8f9fa;
+        }
+        .accordion-body {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="store-header py-4">
+        <h1>Makeup</h1>
+        <p>“Beauty That Speaks Volumes!”</p>
+    </div>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Shop Categories</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="storefront project(skincare page).html">Skincare</a></li>
+							<li><a class="dropdown-item" href="storefront project(fragrance page).html">Fragrance</a></li>
+                            <li><a class="dropdown-item" href="storefront project(bath page).html">Bath and Body</a></li>
+                            <li><a class="dropdown-item" href="storefront project(hair care).html">Hair Care</a></li>
+                            <li><a class="dropdown-item" href="storefront project(makeup page).html">Makeup</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="storefront project(brand page).html">Brand</a></li>
+                    <li class="nav-item"><a class="nav-link" href="storefront project(blog page).html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="storefront project(order page).html">Order</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-heart"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PRODUCTS AND FAQ IN ROW -->
+    <div class="container my-5">
+        <div class="row g-4">
+            <!-- Product 1 -->
+            <div class="col-md-4">
+                <div class="card text-dark">
+                    <img src="https://media6.ppl-media.com/tr:h-235,w-235,c-at_max,l-image,i-Best_seller_700x700base_gUMVzNGWt_.png,lfo-top_right,l-end,dpr-2/static/img/product/333323/facescanada-strobe-cream-i-hyaluronic-acid-i-shea-butter-i-instant-hydration-i-flawless-radiance-i-anti-ageing-i-alcohol-free-i-vegan-i-rose-gold-30-g_1_display_1736829171_aba118dd.jpg" class="card-img-top" alt="Good Vibes">
+					<a href="storefront project(order page).html"></a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Faces Canada Highlighter and Illuminator</h4>
+                        <p class="card-text">Confidence Starts with a Brushstroke</p>
+                    </div>
+                </div>
+                <div class="accordion mt-3" id="faq1">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1a">
+                                How to use this?
+                            </button>
+                        </h2>
+                        <div id="collapse1a" class="accordion-collapse collapse show" data-bs-parent="#faq1">
+                            <div class="accordion-body">Use as a mosturizer<br>
+							Mix with foundation<br>
+							Use as a primer</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1b">
+                                What's special in this?
+                            </button>
+                        </h2>
+                        <div id="collapse1b" class="accordion-collapse collapse" data-bs-parent="#faq1">
+                            <div class="accordion-body">Shea Butter<br>
+							Hyaluronic Acid</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1c">
+                                New Shades
+                            </button>
+                        </h2>
+                        <div id="collapse1c" class="accordion-collapse collapse" data-bs-parent="#faq1">
+                            <div class="accordion-body">Peach<br>
+							Silver<br> 
+							Pink<br>
+							Rose Gold<br>
+							Gold</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col-md-4">
+                <div class="card text-dark">
+                    <img src="https://media6.ppl-media.com/tr:h-235,w-235,c-at_max,dpr-2/static/img/product/392319/lakme-eyeconic-kajal-twin-pack-0-35g-0-35g-16-36-70-32_5_display_1718342006_90cbcdb2.jpg" class="card-img-top" alt="Calamine Wipes">
+					<a href="storefront project(order page).html"></a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Lakme Kajal</h4>
+                        <p class="card-text">"Define Your Eyes, Define Your Power</p>
+                    </div>
+                </div>
+                <div class="accordion mt-3" id="faq2">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2a">
+                               How to use this?
+                            </button>
+                        </h2>
+                        <div id="collapse2a" class="accordion-collapse collapse show" data-bs-parent="#faq2">
+                            <div class="accordion-body">
+							Twist open your lakme iconic Kajal<br>
+							Start from the inner corner of your eye<br>
+							Now apply a stroke on the lower lash line<br>
+							Flaunt your iconic look</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2b">
+                                Ideal for
+                            </button>
+                        </h2>
+                        <div id="collapse2b" class="accordion-collapse collapse" data-bs-parent="#faq2">
+                            <div class="accordion-body">All skin types<br>
+							All complexions</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2c">
+                                Key Benefits
+                            </button>
+                        </h2>
+                        <div id="collapse2c" class="accordion-collapse collapse" data-bs-parent="#faq2">
+                            <div class="accordion-body">Lasts upto 24 hours<br>
+							Smudge proof wear<br>
+							Waterproof</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-md-4">
+                <div class="card text-dark">
+                    <img src="https://media6.ppl-media.com/tr:h-235,w-235,c-at_max,dpr-2/static/img/product/264318/maybelline-new-york-super-stay-matte-ink-liquid-lipstick-20-pioneer-5-g_9_display_1568192579_97ac7474.jpg" class="card-img-top" alt="Dermdoc Sunscreen">
+					<a href="storefront project(order page).html"></a>
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Maybelline Lipstick</h4>
+                        <p class="card-text">Fall for the color, live for the fill!</p>
+                    </div>
+                </div>
+                <div class="accordion mt-3" id="faq3">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3a">
+                                Key Benefits
+                            </button>
+                        </h2>
+                        <div id="collapse3a" class="accordion-collapse collapse show" data-bs-parent="#faq3">
+                            <div class="accordion-body">Fade Proof<br>
+							Transfer Proof<br>
+							Lasts all day long<br>
+							Unique arrow applicator<div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3b">
+                                How to use it?
+                            </button>
+                        </h2>
+                        <div id="collapse3b" class="accordion-collapse collapse" data-bs-parent="#faq3">
+                            <div class="accordion-body">Apply liquid lipstick in the centre of your upper lip<br>
+							Follow the contours of your mouth<br>
+							Glide the liquid lipstick across the entrie bottom lip</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3c">
+                                What makes it unique?
+                            </button>
+                        </h2>
+                        <div id="collapse3c" class="accordion-collapse collapse" data-bs-parent="#faq3">
+                            <div class="accordion-body">Flawless matte finish<br>
+							Available in over 25+ super saturated shades<br>
+							Smooth in finish</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-light text-center py-4 mt-5">
+        <div class="container">
+            <h5>Contact Us</h5>
+            <p>Email: support@etherealtouch.com</p>
+            <p>Address: 123 Dream Avenue, Beauty City, BC 45678</p>
+            <p>Phone: +1 (800) 123-4567</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

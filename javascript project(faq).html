@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQs | LegalEase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e8ecf3, #f4f6f9);
+    }
+
+    nav {
+      background-color: #2c3e50;
+      padding: 1rem 2rem;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      color: #ecf0f1;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #f1c40f;
+    }
+	.hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+      background: linear-gradient(to right, #2c3e50, #34495e);
+      color: #fff;
+    }
+
+    .faq-container {
+      max-width: 900px;
+      margin: 60px auto;
+      background: #fff;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #2c3e50;
+    }
+
+    .form-control:focus {
+      border-color: #2980b9;
+      box-shadow: none;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 0.95rem;
+      margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1><i class="fas fa-scale-balanced me-2"></i>Welcome to LegalEase</h1>
+    <p>Your simple, smart contract and policy generator for freelancers and startups.</p>
+    <a href="javascript project(services).html" class="btn btn-warning">Explore Services</a>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="d-flex justify-content-center flex-wrap">
+    <a href="javascript project(home).html">Home</a>
+    <a href="javascript project(about).html">About</a>
+    <a href="javascript project(services).html">Services</a>
+	<a href="javascript project(template).html">Templates</a>
+    <a href="javascript project(contact).html">Contact</a>
+  </nav>
+
+  <!-- FAQ Section -->
+  <div class="faq-container">
+    <h2><i class="fas fa-question-circle me-2"></i>Frequently Asked Questions</h2>
+
+    <!-- Search -->
+    <input type="text" id="faqSearch" class="form-control mb-4" placeholder="Search a question...">
+
+    <!-- Accordion -->
+    <div class="accordion" id="faqAccordion">
+      <!-- Question 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+            What is an NDA and when do I need one?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            A Non-Disclosure Agreement (NDA) is a contract that keeps one party from revealing another's confidential information. It’s commonly used when discussing business ideas, partnerships, or freelance work.
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+            Is my data safe when I use LegalEase forms?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes! LegalEase does not store or share your data. All forms are generated on the front-end and are only visible to you unless you download or save them.
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+            What’s the difference between an employment contract and a freelancer agreement?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            An employment contract establishes a full-time or part-time relationship between an employer and employee, while a freelancer agreement is for independent work with limited scope and time.
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+            Can I edit the generated document later?
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, you can download the document and edit it using any word processing tool like Microsoft Word or Google Docs.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 LegalEase – Empowering freelancers and businesses with legal simplicity.
+  </footer>
+
+  <!-- Bootstrap JS + Filter Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const searchInput = document.getElementById('faqSearch');
+    const items = document.querySelectorAll('.accordion-item');
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+      items.forEach(item => {
+        const question = item.querySelector('.accordion-button').textContent.toLowerCase();
+        item.style.display = question.includes(query) ? '' : 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>

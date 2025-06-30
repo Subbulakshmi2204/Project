@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Commerce Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+        }
+        .store-header {
+            text-align: center;
+            padding: 40px 0 20px;
+        }
+        .store-header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            color: #00ffe0;
+        }
+        .store-header p {
+            font-style: italic;
+            color: #ccc;
+            font-size: 1.2rem;
+        }
+        .carousel-item {
+            position: relative;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        .carousel-item .card {
+            background-color: #1c1c1c;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+        }
+        .carousel-item img {
+            max-height: 200px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+        .carousel-item h3 {
+            color: #00ffe0;
+            margin-top: 1rem;
+        }
+        .carousel-item p {
+            color: #ccc;
+        }
+        .heart-icon {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 1.5rem;
+            color: #ff4d4d;
+            cursor: pointer;
+        }
+        .buy-now-btn {
+            margin-top: 1rem;
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(1);
+        }
+        .carousel-indicators [data-bs-target] {
+            background-color: #00ffe0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="store-header">
+        <h1>Ethereal Touch</h1>
+        <p>“Perfect for a dreamy, elegant brand”</p>
+    </div>
+<!-- NAVIGATION BAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <!-- Dropdown for Shop Categories -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="shopDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Shop Categories
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="shopDropdown">
+            <li><a class="dropdown-item" href="storefront project(skincare page).html">Skincare</a></li>
+			<li><a class="dropdown-item" href="storefront project(fragrance page).html">Fragrance</a></li>
+            <li><a class="dropdown-item" href="storefront project(bath page).html">Bath and Body</a></li>
+            <li><a class="dropdown-item" href="storefront project(hair care).html">Hair Care</a></li>
+            <li><a class="dropdown-item" href="storefront project(makeup page).html">Makeup</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="storefront project(brand page).html">Brand</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="storefront project(blog page).html">Blog</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="storefront project(order page).html">Order</a>
+        </li>
+      </ul>
+
+      <!-- Heart and Cart Icons -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-heart"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="container mt-4">
+        <div id="productCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#productCarousel" data-bs-slide-to="4"></button>
+            </div>
+
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+
+                <!-- Product 1 -->
+<div class="carousel-item active">
+  <div class="card mx-auto" style="max-width: 600px;">
+    <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1709241748-danessa-myricks-beauty-yummy-skin-blurring-balm-powder-65e0f5789ca8f.jpg?crop=1xw:1xh;center,top&resize=980:*" class="d-block w-100" alt="Product 1">
+    <h3>Best Primer-Powder Hybrid</h3>
+    <p>Flawless Start, Seamless Finish.</p>
+    <a href="storefront project(order page).html" class="btn btn-outline-info buy-now-btn">
+      <i class="fas fa-shopping-cart"></i> Buy Now
+    </a>
+  </div>
+</div>
+
+<!-- Product 2 -->
+<div class="carousel-item">
+  <div class="card mx-auto" style="max-width: 600px;">
+    <img src="https://www.maybelline.com/-/media/project/loreal/brand-sites/mny/americas/us/eye-makeup/mascara/lash-sensational-sky-high-washable-mascara-makeup/update-mar-25/alt-pics/maybelline-sky-high-lash-sensational-mascara-eye-789-green-altitude-041554097818-open-p.jpg" class="d-block w-100" alt="Product 2">
+    <h3>Lash Sensational Sky High Washable Mascara Makeup</h3>
+    <p>Reach New Heights of Lash Perfection!</p>
+    <a href="storefront project(order page).html" class="btn btn-outline-info buy-now-btn">
+      <i class="fas fa-shopping-cart"></i> Buy Now
+    </a>
+  </div>
+</div>
+
+<!-- Product 3 -->
+<div class="carousel-item">
+  <div class="card mx-auto" style="max-width: 600px;">
+    <img src="https://jdinstituteoffashiontechnology.b-cdn.net/wp-content/uploads/2021/05/Foundation-2-1.jpg" class="d-block w-100" alt="Product 3">
+    <h3>Maybelline Fit Me Foundation</h3>
+    <p>Fit Your Skin, Flaunt Your Confidence!</p>
+    <a href="storefront project(order page).html" class="btn btn-outline-info buy-now-btn">
+      <i class="fas fa-shopping-cart"></i> Buy Now
+    </a>
+  </div>
+</div>
+
+<!-- Product 4 -->
+<div class="carousel-item">
+  <div class="card mx-auto" style="max-width: 600px;">
+    <img src="https://plumgoodness.com/cdn/shop/files/a3ff47_6a60a5ded8c0432f9689a91d430c1ac7_mv2_1024x1024.progressive.jpg?v=1693489814" class="d-block w-100" alt="Product 4">
+    <h3>Plum liquid lipstick</h3>
+    <p>Bold Color. Soft Touch. Plum Perfect.</p>
+    <a href="storefront project(order page).html" class="btn btn-outline-info buy-now-btn">
+      <i class="fas fa-shopping-cart"></i> Buy Now
+    </a>
+  </div>
+</div>
+
+<!-- Product 5 -->
+<div class="carousel-item">
+  <div class="card mx-auto" style="max-width: 600px;">
+    <img src="https://www.shutterstock.com/image-photo/makeup-colorful-eyeshadow-palettes-brushes-260nw-75396211.jpg" class="d-block w-100" alt="Product 5">
+    <h3>Eye Shadow Quad From Chambor</h3>
+    <p>Four Shades, Infinite Glam!</p>
+    <a href="storefront project(order page).html" class="btn btn-outline-info buy-now-btn">
+      <i class="fas fa-shopping-cart"></i> Buy Now
+    </a>
+  </div>
+</div>
+
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+        </div>
+    </div>
+<footer class="bg-dark text-light text-center py-4 mt-5">
+  <div class="container">
+    <h5>Contact Us</h5>
+    <p>Email: support@etherealtouch.com</p>
+    <p>Address: 123 Dream Avenue, Beauty City, BC 45678</p>
+    <p>Phone: +1 (800) 123-4567</p>
+  </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

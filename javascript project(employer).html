@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employment Contract Form | LegalEase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e8ecf3, #f4f6f9);
+    }
+
+    nav {
+      background-color: #2c3e50;
+      padding: 1rem 2rem;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #f1c40f;
+      text-decoration: underline;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px 50px;
+      background: linear-gradient(to right, #2c3e50, #34495e);
+      color: #fff;
+    }
+
+    .form-container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .submitted-data {
+      max-width: 700px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+
+    .submitted-data h3 {
+      color: #2c3e50;
+    }
+
+    .btn-primary {
+      background-color: #2980b9;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #2471a3;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 25px 10px;
+      margin-top: 60px;
+    }
+
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+
+      .submitted-data, .submitted-data * {
+        visibility: visible;
+      }
+
+      .submitted-data {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+
+      .print-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1><i class="fas fa-briefcase me-2"></i>Employment Contract Form</h1>
+    <p>Generate employment agreements effortlessly with LegalEase.</p>
+    <a href="javascript project(services).html" class="btn btn-warning">Explore Services</a>
+  </div>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="javascript project(home).html">Home</a>
+      <a href="javascript project(about).html">About</a>
+      <a href="javascript project(services).html">Services</a>
+      <a href="javascript project(faq).html">FAQ</a>
+	  <a href="javascript project(template).html">Templates</a>
+      <a href="javascript project(contact).html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Employment Contract Form -->
+  <div class="form-container">
+    <h2>Employment Agreement Submission</h2>
+    <form id="employmentForm">
+      <div class="mb-3">
+        <label for="employeeName" class="form-label">Employee Name *</label>
+        <input type="text" class="form-control" id="employeeName" required>
+      </div>
+      <div class="mb-3">
+        <label for="employerName" class="form-label">Employer Name *</label>
+        <input type="text" class="form-control" id="employerName" required>
+      </div>
+      <div class="mb-3">
+        <label for="position" class="form-label">Job Position *</label>
+        <input type="text" class="form-control" id="position" required>
+      </div>
+      <div class="mb-3">
+        <label for="startDate" class="form-label">Start Date *</label>
+        <input type="date" class="form-control" id="startDate" required>
+      </div>
+      <div class="mb-3">
+        <label for="salary" class="form-label">Salary *</label>
+        <input type="text" class="form-control" id="salary" required>
+      </div>
+      <div class="mb-3">
+        <label for="uploadContract" class="form-label">Upload Signed Contract (PDF) *</label>
+        <input type="file" class="form-control" id="uploadContract" accept=".pdf" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Submit</button>
+    </form>
+  </div>
+
+  <!-- Display Submitted Employment Contract Data -->
+  <div class="submitted-data" id="submittedEmployment">
+    <h3> Employment Contract Details</h3>
+    <p><strong>Employee Name:</strong> <span id="dispEmployee"></span></p>
+    <p><strong>Employer Name:</strong> <span id="dispEmployer"></span></p>
+    <p><strong>Job Position:</strong> <span id="dispPosition"></span></p>
+    <p><strong>Start Date:</strong> <span id="dispStartDate"></span></p>
+    <p><strong>Salary:</strong> <span id="dispSalary"></span></p>
+    <p><strong>Uploaded Contract:</strong> <span id="dispContractFile"></span></p>
+    <button class="btn btn-secondary mt-3 print-btn" onclick="window.print()">Print</button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 LegalEase. Build trustworthy employment relationships with confidence.
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('employmentForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const employee = document.getElementById('employeeName').value.trim();
+        const employer = document.getElementById('employerName').value.trim();
+        const position = document.getElementById('position').value.trim();
+        const startDate = document.getElementById('startDate').value;
+        const salary = document.getElementById('salary').value.trim();
+        const fileInput = document.getElementById('uploadContract');
+        const file = fileInput.files[0];
+
+        if (!employee || !employer || !position || !startDate || !salary || !file) {
+          alert('Please fill out all fields and upload the contract.');
+          return;
+        }
+
+        document.getElementById('dispEmployee').textContent = employee;
+        document.getElementById('dispEmployer').textContent = employer;
+        document.getElementById('dispPosition').textContent = position;
+        document.getElementById('dispStartDate').textContent = startDate;
+        document.getElementById('dispSalary').textContent = salary;
+        document.getElementById('dispContractFile').textContent = file.name;
+
+        document.getElementById('submittedEmployment').style.display = 'block';
+        this.reset();
+      });
+    });
+  </script>
+
+</body>
+</html>

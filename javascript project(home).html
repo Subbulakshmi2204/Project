@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LegalEase – Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f9;
+    }
+
+    nav {
+      background-color: #2c3e50;
+      padding: 1rem 2rem;
+      position: relative;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #f1c40f;
+    }
+
+    .sign-in-btn {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #f1c40f;
+      border: none;
+      padding: 6px 16px;
+      border-radius: 4px;
+      color: #2c3e50;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .sign-in-btn:hover {
+      background-color: #d4ac0d;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #2c3e50, #34495e);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    .hero .btn {
+      padding: 10px 25px;
+      font-weight: 500;
+      margin-top: 15px;
+    }
+
+    .about-section {
+      padding: 50px 20px;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .about-section h2 {
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      color: #2c3e50;
+    }
+
+    .about-section p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .carousel-item {
+      background-color: #fff;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .quote-box {
+      background: #ffffff;
+      padding: 2rem;
+      margin: 40px auto;
+      border-left: 6px solid #3498db;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      max-width: 700px;
+      text-align: center;
+    }
+
+    .quote-box p {
+      font-size: 1.3rem;
+      color: #333;
+      font-style: italic;
+    }
+
+    .quote-box span {
+      display: block;
+      margin-top: 10px;
+      color: #777;
+      font-size: 1rem;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1><i class="fas fa-scale-balanced me-2"></i>Welcome to LegalEase</h1>
+    <p>Your simple, smart contract and policy generator for freelancers and startups.</p>
+    <a href="javascript project(services).html" class="btn btn-warning">Explore Services</a>
+  </div>
+
+ <!-- Navigation -->
+  <nav>
+    <div class="nav-wrapper">
+	  <a href="javascript project(about).html">About</a>
+	  <a href="javascript project(services).html">Services</a>
+      <a href="javascript project(template).html">Templates</a>
+      <a href="javascript project(faq).html">FAQ</a>
+      <a href="javascript project(contact).html">Contact</a>
+    </div>
+    <button class="sign-in-btn" data-bs-toggle="modal" data-bs-target="#signInModal">Sign In</button>
+  </nav>
+  
+  <!-- About Section -->
+  <div class="about-section" id="about">
+    <h2>Why Choose LegalEase?</h2>
+    <p>
+      LegalEase makes legal documentation easy and accessible for everyone. Whether you’re a freelancer,
+      startup founder, or small business owner, our platform helps you create contracts, NDAs, and policies without the legal jargon.
+      With user-friendly templates and step-by-step forms, you can stay legally protected without spending a fortune.
+    </p>
+  </div>
+
+  <!-- Legal Tips Carousel -->
+  <div class="container my-5">
+    <h2 class="text-center mb-4">💡 Legal Tips for Everyday Use</h2>
+    <div id="legalTipsCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <h5>Always Read Before You Sign</h5>
+          <p>Even simple agreements can have hidden clauses. Take a moment to review before committing.</p>
+        </div>
+        <div class="carousel-item">
+          <h5>Use NDAs for Freelance Work</h5>
+          <p>Protect your ideas and client data with a Non-Disclosure Agreement before starting a project.</p>
+        </div>
+        <div class="carousel-item">
+          <h5>Privacy Policies Are a Must</h5>
+          <p>If you collect user data, even emails, a privacy policy is legally required in many regions.</p>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#legalTipsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#legalTipsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Quote Rotator -->
+  <div class="quote-box" id="quoteBox">
+    <p id="quoteText">“A contract is only as good as the people who sign it.”</p>
+    <span id="quoteAuthor">– Unknown</span>
+  </div>
+
+  <!-- Sign In Modal -->
+  <div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form id="signInForm" class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signInModalLabel">Sign In</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+              <label for="nameInput" class="form-label">Name</label>
+              <input type="text" class="form-control" id="nameInput" required>
+            </div>
+            <div class="mb-3">
+              <label for="emailInput" class="form-label">Email</label>
+              <input type="email" class="form-control" id="emailInput" required>
+            </div>
+            <div class="mb-3">
+              <label for="passwordInput" class="form-label">Password</label>
+              <input type="password" class="form-control" id="passwordInput" required>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Log In</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 LegalEase. All rights reserved.</p>
+    <p>Built for startups, freelancers, and innovators seeking legal simplicity.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const quotes = [
+      { text: "“A contract is only as good as the people who sign it.”", author: "Unknown" },
+      { text: "“Injustice anywhere is a threat to justice everywhere.”", author: "Martin Luther King Jr." },
+      { text: "“If you don't have a contract, you don’t have protection.”", author: "LegalEase Team" },
+      { text: "“The law is reason, free from passion.”", author: "Aristotle" }
+    ];
+
+    let current = 0;
+    const quoteText = document.getElementById('quoteText');
+    const quoteAuthor = document.getElementById('quoteAuthor');
+
+    setInterval(() => {
+      current = (current + 1) % quotes.length;
+      quoteText.textContent = quotes[current].text;
+      quoteAuthor.textContent = "– " + quotes[current].author;
+    }, 4000);
+
+    document.getElementById('signInForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert("Logged in successfully");
+      const modal = bootstrap.Modal.getInstance(document.getElementById('signInModal'));
+      modal.hide();
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
