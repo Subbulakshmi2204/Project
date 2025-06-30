@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #8E44AD, #3498DB);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 0;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            padding: 14px 25px;
+            transition: transform 0.3s;
+        }
+        nav ul li:hover {
+            transform: scale(1.1);
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        h1 {
+            margin-top: 60px;
+            font-size: 36px;
+        }
+        p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 40px auto;
+            line-height: 1.6;
+        }
+        form {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            margin: 40px auto;
+        }
+        fieldset {
+            border: none;
+        }
+        legend {
+            font-size: 22px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: #FFD700;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #FFC107;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <nav>
+        <ul>
+            <li><a href="front(css project1).html">Home</a></li>
+            <li><a href="about(css project1).html">About</a></li>
+            <li><a href="css p1.html">Ready to Play</a></li>
+            <li><a href="contact(css project1).html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <p>Thank You for Playing!
+	We hope you enjoyed the challenge and fun of the Flipcard Memory Game. 
+	Your visit means a lot to us, and we’re thrilled to have had you here. 
+	Keep your memory sharp, and feel free to drop by anytime for another round of exciting gameplay!</p>
+    <form method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Get in Touch</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" cols="30" rows="5" required></textarea>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>

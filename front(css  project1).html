@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Card Memory Game</title>
+    <style>
+        /* General Styles */
+        body {
+            background: linear-gradient(to bottom, #4facfe 0%, #00f2fe 100%);
+            text-align: center;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        /* Animated Heading */
+        .main-heading {
+            font-size: 35px;
+            font-weight: bold;
+            color: #fff;
+            margin-top: 50px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Navigation Bar - Below Heading */
+        nav {
+            width: 100%;
+            background: linear-gradient(to right, #6A0DAD, #8E44AD);
+            padding: 10px 0;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+            margin-top: 15px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            padding: 14px 25px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        nav ul li:hover {
+            transform: scale(1.1);
+        }
+        nav ul li::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 3px solid white;
+            border-radius: 15px;
+            transform: scale(0);
+            transition: transform 0.3s;
+        }
+        nav ul li:hover::before {
+            transform: scale(1);
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            position: relative;
+            z-index: 1;
+        }
+        /* Container for Centering */
+        .container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            width: 100%;
+        }
+        /* Form Styling */
+        form {
+            background: white;
+            width: 360px;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        form:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
+        }
+        /* Input Fields */
+        input[type="text"],
+        input[type="email"] {
+            width: 85%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            transition: box-shadow 0.3s, border-color 0.3s;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            border-color: #6A0DAD;
+            box-shadow: 0px 0px 8px rgba(106, 13, 173, 0.6);
+            outline: none;
+        }
+        /* Checkbox */
+        input[type="checkbox"] {
+            margin: 10px 5px;
+        }
+        /* Button Styling */
+        button {
+            width: 100%;
+            background: linear-gradient(to right, #4CAF50, #45a049);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+        button:hover {
+            background: linear-gradient(to right, #45a049, #388E3C);
+            transform: scale(1.05);
+        }
+        /* Privacy Text */
+        p {
+            font-size: 14px;
+            color: #555;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="main-heading">Flip Card Memory Game</h1>
+    <nav>
+        <ul>
+            <li><a href="front(css  project1).html">Home</a></li>
+            <li><a href="about(css project 1).html">About</a></li>
+            <li><a href="css p1.html">Ready to Play</a></li>
+            <li><a href="contact(css project1).html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <form>
+            <h1>Welcome to Flip Card Memory Game</h1>
+            <input type="text" id="name" name="name" placeholder="Enter Your Name" required><br>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email" required><br>
+            <input type="checkbox" name="terms" required> I Agree to the Terms of Service<br><br>
+            <button type="submit"><a href="C:\Users\subbu\OneDrive\Documents\about(css project 1).html">Sign In</a></button>
+            <p>We respect your privacy.</p>
+        </form>
+    </div>
+</body>
+</html>
