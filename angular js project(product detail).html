@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ecoMarketApp">
+<head>
+  <meta charset="UTF-8">
+  <title>EcoMarket – Product Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0fdf4;
+    }
+
+    .eco-header {
+      background-color: #2d6a4f;
+      color: white;
+      padding: 1rem 0;
+    }
+
+    .eco-header h1 {
+      text-align: center;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .nav-centered {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .nav-centered .nav-link {
+      color: white;
+      font-weight: 500;
+    }
+
+    .quote-section {
+      background: linear-gradient(135deg, #d0f0c0, #b7e4c7);
+      color: #1b4332;
+      font-size: 1.1rem;
+      font-style: italic;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 0.5rem;
+      border-top: 3px solid #2d6a4f;
+      border-bottom: 3px solid #2d6a4f;
+      background-image: url('https://www.transparenttextures.com/patterns/green-dust-and-scratches.png');
+    }
+
+    .eco-footer {
+      background-color: #1b4332;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .product-details {
+      margin-top: 3rem;
+    }
+
+    .product-details img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .product-info h2 {
+      color: #2d6a4f;
+    }
+
+    .btn-buy {
+      background-color: #2d6a4f;
+      border: none;
+    }
+  </style>
+</head>
+
+<body ng-controller="productDetailsController">
+
+  <!-- Header -->
+  <header class="eco-header">
+    <div class="container">
+      <h1>EcoMarket</h1>
+      <nav class="nav nav-centered">
+        <a class="nav-link" href="angular js project(home).html">Home</a>
+        <a class="nav-link" href="angular js project(product).html">Shop</a>
+        <a class="nav-link" href="#/cart">Cart</a>
+        <a class="nav-link" href="#/dashboard">Dashboard</a>
+        <a class="nav-link" href="#/login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Quote Section -->
+  <section class="quote-section">
+    <p>“The greatest threat to our planet is the belief that someone else will save it.”</p>
+    <span>– Robert Swan</span>
+  </section>
+
+  <!-- Product Details -->
+  <main class="container product-details">
+    <div class="row">
+      <div class="col-md-6">
+        <img ng-src="{{ product.image }}" alt="{{ product.name }}">
+      </div>
+      <div class="col-md-6 product-info">
+        <h2>{{ product.name }}</h2>
+        <p class="text-muted">{{ product.description }}</p>
+        <p class="fw-bold text-success">₹{{ product.price }}</p>
+        <p>Category: <strong>{{ product.category }}</strong></p>
+        <button class="btn btn-buy btn-success">Add to Cart</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="eco-footer">
+    <p>&copy; 2025 EcoMarket. All rights reserved.</p>
+  </footer>
+
+  <!-- AngularJS App and Controller -->
+  <script>
+    var app = angular.module('ecoMarketApp', ['ngRoute']);
+
+    app.config(function($routeProvider) {
+      $routeProvider
+        .when("/product/:id", {
+          templateUrl: "product-details.html",
+          controller: "productDetailsController"
+        });
+    });
+
+    app.controller('productDetailsController', function($scope, $routeParams) {
+      var products = [
+        {
+          id: 1,
+          name: 'Organic Cotton T-shirt',
+          description: 'Made from 100% organic cotton. Breathable and sustainable.',
+          price: 599,
+          category: 'Clothing',
+          image: 'https://5.imimg.com/data5/SELLER/Default/2023/9/340402385/OK/FI/UJ/105133959/organic-cotton-t-shirt.jpg'
+        },
+        {
+          id: 2,
+          name: 'Reusable Water Bottle',
+          description: 'Eco-friendly stainless steel bottle. Keeps drinks cool.',
+          price: 399,
+          category: 'Accessories',
+          image: 'https://www.waterbottle.tech/wp-content/uploads/2019/05/reusable-eco-friendly-water-bottle.jpg'
+        },
+        {
+          id: 3,
+          name: 'Upcycled Chair',
+          description: 'Comfortable and stylish chair made from recycled materials.',
+          price: 1899,
+          category: 'Furniture',
+          image: 'https://sirohi.org/cdn/shop/products/1_2716c0a5-c38f-401f-9831-f9cd84610884.png?v=1652936496'
+        },
+        {
+          id: 4,
+          name: 'Jute Tote Bag',
+          description: 'Reusable and biodegradable shopping bag.',
+          price: 299,
+          category: 'Accessories',
+          image: 'https://apisap.fabindia.com/medias/20175759-01.jpg'
+        },
+        {
+          id: 5,
+          name: 'Bamboo Utensils Set',
+          description: 'Eco kitchen set made of durable bamboo.',
+          price: 349,
+          category: 'Kitchen',
+          image: 'https://i.etsystatic.com/23446820/r/il/fe0c15/5524701742/il_570xN.5524701742_3cvq.jpg'
+        }
+      ];
+
+      var id = parseInt($routeParams.id);
+      $scope.product = products.find(p => p.id === id);
+    });
+  </script>
+
+</body>
+</html>

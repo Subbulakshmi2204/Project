@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ecoMarketApp">
+<head>
+  <meta charset="UTF-8">
+  <title>EcoMarket – Products</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+  <style>
+    body { font-family: 'Poppins', sans-serif; background-color: #f0fdf4; }
+    .eco-header { background-color: #2d6a4f; color: white; padding: 1rem 0; text-align: center; }
+    .nav-centered { display: flex; justify-content: center; gap: 1rem; margin-top: 0.5rem; }
+    .nav-centered .nav-link { color: white; font-weight: 500; }
+    .quote-section { background-color: #d8f3dc; border-top: 2px solid #1b4332; border-bottom: 2px solid #2d6a4f; text-align: center; padding: 1rem; color: #1b4332; }
+    .eco-footer { background-color: #1b4332; color: white; text-align: center; padding: 1rem; }
+    .card-img-top { height: 200px; object-fit: cover; }
+    .product-card { box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+  <div ng-controller="mainController">
+    <header class="eco-header">
+      <h1>EcoMarket</h1>
+      <section class="quote-section">
+        <p>“The greatest threat to our planet is the belief that someone else will save it.” – Robert Swan</p>
+      </section>
+      <nav class="nav nav-centered">
+        <a class="nav-link" href="angular js project(home).html">Home</a>
+        <a class="nav-link" href="angular js project(product).html">Shop</a>
+        <a class="nav-link" href="angular js project(cart).html">Cart</a>
+		<a class="nav-link" href="angular js project(offer).html">Offers</a>
+      </nav>
+    </header>
+
+    <div ng-view class="container mt-5"></div>
+
+    <footer class="eco-footer mt-5">
+      <p>&copy; 2025 EcoMarket. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    var app = angular.module('ecoMarketApp', ['ngRoute']);
+
+    app.config(function($routeProvider) {
+      $routeProvider
+        .when('/', {
+          template: '<h2>Welcome to EcoMarket</h2><p>Eco-friendly shopping made simple!</p>'
+        })
+        .when('/products', {
+          template: `
+            <div class="text-center mb-4">
+              <h2>Browse Eco-Friendly Products</h2>
+              <p class="text-muted">Choose from a wide range of sustainable and second-hand items.</p>
+            </div>
+            <div class="row">
+              <div class="col-md-4 mb-4" ng-repeat="product in products">
+                <div class="card product-card">
+                  <img ng-src="{{ product.image }}" class="card-img-top" alt="{{ product.name }}">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p class="text-success fw-semibold">&#8377;{{ product.price }}</p>
+                    <button class="btn btn-success btn-sm" ng-click="addToCart(product)">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            </div>`,
+          controller: 'productsController'
+        })
+        .when('/cart', {
+          template: `
+            <div class="text-center mb-4">
+              <h2>Your Shopping Cart</h2>
+              <p class="text-muted">Review your selected items below.</p>
+            </div>
+            <div ng-if="cart.length === 0" class="text-center">
+              <p>Your cart is empty.</p>
+            </div>
+            <div class="row" ng-if="cart.length > 0">
+              <div class="col-md-4 mb-4" ng-repeat="item in cart">
+                <div class="card product-card">
+                  <img ng-src="{{ item.image }}" class="card-img-top" alt="{{ item.name }}">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <p class="card-text">{{ item.description }}</p>
+                    <p class="text-success fw-semibold">&#8377;{{ item.price }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>`,
+          controller: 'cartController'
+        })
+        .otherwise({ redirectTo: '/' });
+    });
+
+    app.factory('CartService', function() {
+      var cart = [];
+      return {
+        addToCart: function(product) {
+          cart.push(product);
+        },
+        getCart: function() {
+          return cart;
+        }
+      };
+    });
+
+    app.controller('mainController', function($scope) {});
+
+    app.controller('productsController', function($scope, CartService) {
+      $scope.products = [
+        { name: 'Organic Cotton T-shirt', description: 'Made from 100% organic cotton.', price: 599, image: 'https://5.imimg.com/data5/SELLER/Default/2023/9/340402385/OK/FI/UJ/105133959/organic-cotton-t-shirt.jpg' },
+        { name: 'Reusable Water Bottle', description: 'Eco-friendly stainless steel bottle.', price: 399, image: 'https://www.waterbottle.tech/wp-content/uploads/2019/05/reusable-eco-friendly-water-bottle.jpg' },
+        { name: 'Upcycled Chair', description: 'Chair made from recycled materials.', price: 1899, image: 'https://sirohi.org/cdn/shop/products/1_2716c0a5-c38f-401f-9831-f9cd84610884.png?v=1652936496' },
+        { name: 'Jute Tote Bag', description: 'Reusable and biodegradable.', price: 299, image: 'https://apisap.fabindia.com/medias/20175759-01.jpg' },
+        { name: 'Bamboo Utensils Set', description: 'Kitchen set made of durable bamboo.', price: 349, image: 'https://i.etsystatic.com/23446820/r/il/fe0c15/5524701742/il_570xN.5524701742_3cvq.jpg' }
+      ];
+      $scope.addToCart = function(product) {
+        CartService.addToCart(product);
+        alert(product.name + ' added to cart!');
+      };
+    });
+
+    app.controller('cartController', function($scope, CartService) {
+      $scope.cart = CartService.getCart();
+    });
+  </script>
+</body>
+</html>
