@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Shopping Pro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg, #fdfbfb, #e6f2ff, #f0eaff);
+}
+
+.app{
+    width:95%;
+    max-width:520px;
+    background:white;
+    border-radius:25px;
+    padding:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.12);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+/* Progress Bar */
+.progress-container{
+    height:12px;
+    background:#eee;
+    border-radius:20px;
+    overflow:hidden;
+    margin:10px 0 5px;
+}
+
+#progress-bar{
+    height:100%;
+    width:0%;
+    border-radius:20px;
+    transition:0.3s;
+    background:red;
+}
+
+.stats{
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    color:#555;
+    margin-bottom:10px;
+}
+
+/* Input box */
+.input-box{
+    display:flex;
+    gap:6px;
+    margin:15px 0;
+}
+
+#itemInput{
+    flex:2;
+}
+
+#qtyInput{
+    width:70px;
+    text-align:center;
+}
+
+select{
+    flex:1.2;
+}
+
+.add-btn{
+    background:#6c8bff;
+    color:white;
+    width:45px;
+}
+
+/* Inputs */
+input, select{
+    padding:10px;
+    border-radius:12px;
+    border:1px solid #ddd;
+    outline:none;
+}
+
+input:focus,select:focus{
+    border-color:#8ea8ff;
+}
+
+button{
+    padding:10px;
+    border-radius:12px;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* Categories */
+.category-box{
+    margin-bottom:12px;
+}
+
+.category-title{
+    font-weight:600;
+    margin:6px 0;
+    padding-left:5px;
+}
+
+/* Item Cards */
+.item{
+    background:#f6f8ff;
+    border-radius:15px;
+    padding:10px;
+    margin-bottom:7px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 3px 8px rgba(0,0,0,0.06);
+}
+
+.item span{
+    flex:1;
+    padding-right:8px;
+}
+
+.qty{
+    font-size:13px;
+    background:#dde3ff;
+    padding:3px 7px;
+    border-radius:8px;
+    margin-right:5px;
+    flex:0;
+}
+
+.item.bought{
+    background:#e6ffe6;
+    text-decoration:line-through;
+    opacity:0.7;
+}
+
+.actions button{
+    background:none;
+    font-size:16px;
+}
+
+.clear-btn{
+    margin-top:10px;
+    width:100%;
+    background:#ff6b6b;
+    color:white;
+}
+
+.empty{
+    text-align:center;
+    color:#aaa;
+    display:none;
+    margin:15px 0;
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+<h2>🛒 Smart Shopping</h2>
+
+<div class="progress-container">
+    <div id="progress-bar"></div>
+</div>
+
+<div class="stats">
+    <span id="total">Total: 0</span>
+    <span id="boughtCount">Bought: 0</span>
+    <span id="left">Left: 0</span>
+</div>
+
+<div class="input-box">
+    <input type="text" id="itemInput" placeholder="Item name">
+    <input type="text" id="qtyInput" placeholder="Qty">
+    <select id="category">
+        <option>🥦 Groceries</option>
+        <option>🧼 Cleaning</option>
+        <option>🏠 House</option>
+        <option>📦 Other</option>
+    </select>
+    <button class="add-btn" onclick="addItem()">+</button>
+</div>
+
+<div id="🥦 Groceries" class="category-box">
+    <div class="category-title">🥦 Groceries</div>
+</div>
+
+<div id="🧼 Cleaning" class="category-box">
+    <div class="category-title">🧼 Cleaning</div>
+</div>
+
+<div id="🏠 House" class="category-box">
+    <div class="category-title">🏠 House</div>
+</div>
+
+<div id="📦 Other" class="category-box">
+    <div class="category-title">📦 Other</div>
+</div>
+
+<div id="empty" class="empty"> No items added yet</div>
+
+<button class="clear-btn" onclick="clearBought()">Clear Bought</button>
+
+</div>
+
+<script>
+let input = document.getElementById("itemInput")
+let qtyInput = document.getElementById("qtyInput")
+let categorySelect = document.getElementById("category")
+let progressBar = document.getElementById("progress-bar")
+
+window.onload = () => {
+    let data = JSON.parse(localStorage.getItem("shoppingData")) || []
+    data.forEach(i => createItem(i.text, i.qty, i.category, i.bought))
+    updateStats()
+}
+
+function addItem(){
+    if(input.value.trim()==="") return
+    createItem(input.value, qtyInput.value, categorySelect.value, false)
+    input.value=""
+    qtyInput.value=""
+    saveItems()
+    updateStats()
+}
+
+function createItem(text, qty, category, bought){
+    let box = document.getElementById(category)
+
+    let item = document.createElement("div")
+    item.className = "item"
+    if(bought) item.classList.add("bought")
+
+    item.innerHTML = `
+        <span>${text}</span>
+        <span class="qty">${qty || "1"}</span>
+        <div class="actions">
+            <button onclick="toggleBought(this)">✅</button>
+            <button onclick="removeItem(this)">🗑</button>
+        </div>
+    `
+
+    box.appendChild(item)
+}
+
+function toggleBought(btn){
+    btn.closest(".item").classList.toggle("bought")
+    saveItems()
+    updateStats()
+}
+
+function removeItem(btn){
+    btn.closest(".item").remove()
+    saveItems()
+    updateStats()
+}
+
+function clearBought(){
+    document.querySelectorAll(".item.bought").forEach(i=> i.remove())
+    saveItems()
+    updateStats()
+}
+
+function saveItems(){
+    let arr = []
+    document.querySelectorAll(".item").forEach(i=>{
+        arr.push({
+            text: i.children[0].innerText,
+            qty: i.children[1].innerText,
+            category: i.closest(".category-box").id,
+            bought: i.classList.contains("bought")
+        })
+    })
+    localStorage.setItem("shoppingData", JSON.stringify(arr))
+}
+
+function updateStats(){
+    let all = document.querySelectorAll(".item").length
+    let bought = document.querySelectorAll(".item.bought").length
+
+    total.innerText = "Total: " + all
+    boughtCount.innerText = "Bought: " + bought
+    left.innerText = "Left: " + (all-bought)
+
+    empty.style.display = all===0 ? "block" : "none"
+
+    let percent = all===0 ? 0 : (bought/all)*100
+    progressBar.style.width = percent + "%"
+
+    if(percent < 40) progressBar.style.background = "#ff4d4d"
+    else if(percent < 80) progressBar.style.background = "#ffa500"
+    else progressBar.style.background = "#32cd32"
+}
+</script>
+</body>
+</html>
